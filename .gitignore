@@ -1,1 +1,4 @@
 Potato_Leaf_Disease_in_uncontrolled_env/
+model/Resnet152_bestmodel.pth
+Potato_Leaf_Disease_in_uncontrolled_env.zip
+model/Resnet101_bestmodel.pth
