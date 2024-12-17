@@ -270,7 +270,8 @@ if __name__ == '__main__':
             
             val_accuracy = val_correct / val_total  # 검증 정확도
             val_loss /= len(val_loader)  # 평균 검증 손실
-            
+            losses.append(val_loss)
+            accuracys.append(val_accuracy)
             print(f'{epoch+1}s : train_accuracy - {train_accuracy:.3f} train_loss - {train_loss:.3f}, val_accuracy - {val_accuracy:.3f}, val_loss - {val_loss:.3f}')
             
             # Early Stopping 체크
@@ -323,9 +324,9 @@ if __name__ == '__main__':
     ax[0].plot(range(1, len(losses)+1), losses)
     ax[0].set_xlabel('epoch')
     ax[0].set_ylabel('Validation Loss')
-    ax[0].set_title('KD_Student_Validation Loss')
+    ax[0].set_title('KD_Student_alpha=0.7_Validation Loss')
     ax[1].plot(range(1, len(losses)+1), accuracys)
     ax[1].set_xlabel('epoch')
     ax[1].set_ylabel('Validation Acc')
-    ax[1].set_title('KD_Student_Validation Accuracy')
+    ax[1].set_title('KD_Student_alpha=0.7_Validation Accuracy')
     plt.show()
